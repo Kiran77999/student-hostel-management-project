@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Organic Chemistry Textbook - CampusMarket</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;800;900&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed-dim": "#ffb3ae",
+                        "on-tertiary-container": "#fffbff",
+                        "inverse-on-surface": "#ebf1ff",
+                        "inverse-surface": "#2a313d",
+                        "outline": "#6d7a72",
+                        "on-secondary-fixed-variant": "#005236",
+                        "on-primary-fixed": "#002114",
+                        "on-secondary-fixed": "#002113",
+                        "on-primary": "#ffffff",
+                        "secondary": "#006c49",
+                        "on-error": "#ffffff",
+                        "secondary-fixed-dim": "#4edea3",
+                        "on-tertiary-fixed": "#410004",
+                        "surface-bright": "#f9f9ff",
+                        "background": "#f9f9ff",
+                        "surface-container": "#e7eefe",
+                        "primary-container": "#00855d",
+                        "error-container": "#ffdad6",
+                        "surface-variant": "#dce2f3",
+                        "surface-dim": "#d3daea",
+                        "inverse-primary": "#68dba9",
+                        "on-tertiary-fixed-variant": "#7f2928",
+                        "tertiary": "#9b3e3b",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed": "#85f8c4",
+                        "secondary-fixed": "#6ffbbe",
+                        "surface-tint": "#006c4a",
+                        "surface": "#f9f9ff",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-container": "#ba5551",
+                        "on-background": "#151c27",
+                        "primary": "#006948",
+                        "outline-variant": "#bccac0",
+                        "on-surface-variant": "#3d4a42",
+                        "primary-fixed-dim": "#68dba9",
+                        "tertiary-fixed": "#ffdad7",
+                        "surface-container-lowest": "#ffffff",
+                        "error": "#ba1a1a",
+                        "surface-container-low": "#f0f3ff",
+                        "surface-container-high": "#e2e8f8",
+                        "on-primary-container": "#f5fff7",
+                        "on-error-container": "#93000a",
+                        "on-primary-fixed-variant": "#005137",
+                        "surface-container-highest": "#dce2f3",
+                        "secondary-container": "#6cf8bb",
+                        "on-surface": "#151c27",
+                        "on-secondary-container": "#00714d"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "sm": "12px",
+                        "base": "8px",
+                        "xl": "80px",
+                        "xs": "4px",
+                        "lg": "48px",
+                        "gutter": "16px",
+                        "md": "24px",
+                        "margin": "24px"
+                    },
+                    "fontFamily": {
+                        "h3": ["Public Sans"],
+                        "h1": ["Public Sans"],
+                        "body-lg": ["Public Sans"],
+                        "body-md": ["Public Sans"],
+                        "h2": ["Public Sans"],
+                        "label-bold": ["Inter"],
+                        "label-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "h3": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "h1": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "h2": ["30px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "label-bold": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "label-sm": ["12px", {"lineHeight": "1.2", "fontWeight": "500"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .shadow-ambient {
+            box-shadow: 0 2px 4px rgba(0, 105, 72, 0.04);
+        }
+        .shadow-hover {
+            box-shadow: 0 4px 12px rgba(0, 105, 72, 0.08);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md antialiased">
+<!-- TopNavBar -->
+<header class="bg-white dark:bg-gray-900 border-b border-gray-100 dark:border-gray-800 shadow-sm sticky top-0 z-50">
+<div class="flex items-center justify-between px-4 h-16 w-full max-w-7xl mx-auto font-['Public_Sans']">
+<div class="flex items-center gap-base">
+<button class="md:hidden p-2 hover:bg-gray-50 rounded-lg active:scale-95 duration-200">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<span class="text-xl font-black tracking-tight text-emerald-600 dark:text-emerald-400">CampusMarket</span>
+</div>
+<div class="hidden md:flex flex-1 max-w-md mx-8">
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-gray-50 border-gray-200 rounded-lg focus:ring-emerald-500 focus:border-emerald-500 font-label-sm" placeholder="Search for textbooks, electronics..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 p-2 rounded-lg active:scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 p-2 rounded-lg active:scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</button>
+</div>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-4 py-8 md:py-12">
+<!-- Breadcrumb -->
+<nav class="flex items-center gap-2 mb-8 text-gray-500 font-label-sm">
+<span>Books</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+<span>Textbooks</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+<span class="text-on-surface font-semibold">Organic Chemistry</span>
+</nav>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-xl">
+<!-- Left: Product Gallery -->
+<div class="lg:col-span-7">
+<div class="space-y-gutter">
+<div class="aspect-[4/3] rounded-xl overflow-hidden bg-surface-container shadow-ambient border border-gray-100">
+<img alt="Organic Chemistry Textbook" class="w-full h-full object-cover" data-alt="front cover of a clean organic chemistry textbook lying on a white wooden library table with warm natural light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCd0H1Kkc4ifaf6OM0ULFVKSe1na7e32dOqZWNgRt6q4AH4xFLyoi9EFuFbQwplh1Y_Kjvb6aGz3goUF7wjYiLSCHCSyoKUFujJZP2-cDR6fc6wDDseNH0NAkIQ8DVWdiOl84V6AJWM9WTuY-Etf0TdaT8DIwaeM4id-OeUNQ8yNtMIgkT2dQaO3uqJZRZhBI6D0YynfxCpYcAYHMQXv6y94J9qOXxsWAaeUmvknfmfm1em5g6_MMgO0dkMXLjLfrg0gr62LGmwSTM"/>
+</div>
+<div class="grid grid-cols-4 gap-gutter">
+<div class="aspect-square rounded-lg overflow-hidden border-2 border-primary cursor-pointer">
+<img alt="Main View" class="w-full h-full object-cover" data-alt="close up of textbook cover detail and binding" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAu3_SBEiAofN0facyU4St2E0ubgViAbUUxOG2FAT8n4uznONlHgaf6t0m8BYiYBGvPPT4-T22wlQQxADQKjhEveBxAbSV0i3mIMarRoKaZo-JkZvPN8TS-0tZcx5JoRObgcXtBVqxevzXb3lkwuCEGzSjgNrmhyB5TVvGG3f1wATtAYtn7bqoNsCQm9vOhe8lhOU1ax3Lmk-mswtpiqTto9g_FfQJVeyUHl2fT5rekuGFuxsD2AwNsG1Lw4LLXC8HVYYxQNX0-ITs"/>
+</div>
+<div class="aspect-square rounded-lg overflow-hidden border border-gray-100 hover:border-primary-container transition-colors cursor-pointer">
+<img alt="Side View" class="w-full h-full object-cover" data-alt="open pages of a textbook showing chemical structures and colorful diagrams" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsG2Uom31brxrwJxMvbMXRxF-scF94gCMviIwdq0HUYU2IPvjH_btTeUPXBF44XBO0Z_KduagFMZBtqAscFUHUouj6gNPWWD6Da41ADGXDlAUklQ43PDOOj29n1JJoH8bUjHVxxQy4mn3fRXw7YoYmjGLpKHgh73BShYKGCT4y56ET4yIeWpThCljgRwWb1kJvsFXXlX2p_THm05aP4_WHapcxwIa-tOrLN8USAnqi_2E-6uCny6zLqkfeTLzay9k8uIcvopy_uTs"/>
+</div>
+<div class="aspect-square rounded-lg overflow-hidden border border-gray-100 hover:border-primary-container transition-colors cursor-pointer">
+<img alt="Detail" class="w-full h-full object-cover" data-alt="back cover of the textbook showing index and barcode in soft studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1iuuZ1X4XAMl9VpgT4Ti6q6Vx0UHI6m4VQPRMUmi96lVlKwK5GGdU1yMDaZKsHwiFnQ7VNNkaa0kc1RaxezM-cCLY2B_1fJOp281GOvuGaEEva-pUM9uvsxGwIERK0bETNxHbNfD7-7bhZ3IZG_PyGXvMyn4ZsWjonj2bjh3eFTcIiPmbqUBa15pKWVaEZK7nK4fNa8ZFwBKQIRj3hbh2hByw9KEaBUmGez7wgZJonNC8M86BRIoA8uq-TMDdLXBH2m6lMCoPOY8"/>
+</div>
+<div class="relative aspect-square rounded-lg overflow-hidden border border-gray-100 cursor-pointer">
+<img alt="More" class="w-full h-full object-cover blur-sm" data-alt="aesthetic shot of library bookshelf with blurred books in background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfoLa12RK4bZV9VSgA2dD84No-XCeYrpnsaiqHhSWNICVqwaTif9aYZkJ7ylM9GPqffbeHVcDnEmsYsH3XNGXdejoB6ZIACGc4ILX5A27d84XxOk_D-cYlSXs0xn7rogkAoSn1hefOe8W36dbD_HNc_BGNiOWpcaVzlpKbVbMz5QVXpAhvo8uZwZYRY1ZLjh7vx0YZD1WYoiGyyhNSnqpLDGy05OXjC0Gr-yfZYfiZfPAyTlw4pHnTI1sRm0wUrpMhrHS-I29JpVo"/>
+<div class="absolute inset-0 flex items-center justify-center bg-black/40 text-white font-label-bold">+2</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right: Product Info -->
+<div class="lg:col-span-5">
+<div class="sticky top-24 space-y-md">
+<div>
+<div class="flex items-center gap-2 mb-2">
+<span class="px-2 py-1 bg-primary/10 text-primary rounded-full text-[10px] font-bold uppercase tracking-wider">Books</span>
+<div class="flex items-center gap-1 px-2 py-1 bg-emerald-50 text-emerald-700 rounded-full font-label-sm">
+<span class="material-symbols-outlined text-[14px]">verified</span>
+<span class="text-[11px]">Verified Student Seller</span>
+</div>
+</div>
+<h1 class="font-h1 text-h1 text-on-surface mb-2">Organic Chemistry Textbook - 5th Edition</h1>
+<div class="flex items-center justify-between">
+<span class="text-h2 font-h2 text-primary">$45.00</span>
+<span class="px-3 py-1 bg-surface-container-high text-on-surface-variant rounded-full text-label-sm font-medium">Like New</span>
+</div>
+</div>
+<div class="p-md bg-white border border-gray-100 rounded-xl shadow-ambient space-y-md">
+<div class="flex items-center gap-sm">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-surface-container">
+<img alt="Seller Profile" class="w-full h-full object-cover" data-alt="portrait of a friendly smiling male college student with glasses outdoors on campus" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6yPZnkVX1uu5nDmK05gm-KBDOwKavwzfOo6TE0k4Bi9Y3eg151-EIOsyRuRHstGWIfvuiwZKZg8vwVkW8xwljkT_jPhVoPGbia4bQZ2b5XgWcCxtQxKHuvQ5UQQZiIN1YX8y_kzB0FpQ5AiiuqJXdyjimgiHooXLD1Xu7V_3k9R0Wa9M3IiSFoSM9RYuhP4C5ASNcALLqH-B5F4T6EmdBeolx2PkYF-0sBzRU6eIr77hNvXKbJiM0H-Q1wepbQK15xA9xKU8gjzw"/>
+</div>
+<div class="flex-1">
+<h4 class="font-label-bold text-on-surface">David Chen</h4>
+<p class="text-label-sm text-gray-500">Bio-Chemistry Major • Senior</p>
+</div>
+<div class="text-right">
+<div class="flex items-center gap-0.5 text-amber-500">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-label-bold">4.9</span>
+</div>
+<p class="text-[10px] text-gray-400 uppercase font-bold tracking-tighter">12 Sales</p>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-3">
+<button class="flex items-center justify-center gap-2 bg-primary text-on-primary py-3 rounded-lg font-label-bold active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[20px]">chat_bubble</span>
+                                Message Seller
+                            </button>
+<button class="flex items-center justify-center gap-2 border border-outline text-on-surface-variant py-3 rounded-lg font-label-bold hover:bg-gray-50 active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-[20px]">bookmark</span>
+                                Save for Later
+                            </button>
+</div>
+</div>
+<div class="space-y-4">
+<h3 class="font-h3 text-h3">Description</h3>
+<p class="font-body-md text-on-surface-variant leading-relaxed">
+                            Used this for Chem 201 last semester. The book is in pristine condition—no highlighting, no coffee stains, and the binding is completely intact. Includes the unused online access code for the digital practice problems. Perfect for anyone taking the class with Dr. Miller.
+                        </p>
+</div>
+<div class="grid grid-cols-2 gap-gutter pt-4 border-t border-gray-100">
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-emerald-600">location_on</span>
+<div>
+<p class="font-label-bold">Pickup Location</p>
+<p class="text-label-sm text-gray-500">Student Union or Main Library</p>
+</div>
+</div>
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-emerald-600">schedule</span>
+<div>
+<p class="font-label-bold">Posted</p>
+<p class="text-label-sm text-gray-500">2 hours ago</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Related Items Section -->
+<section class="mt-xl">
+<div class="flex items-center justify-between mb-8">
+<h2 class="font-h2 text-h2">Related Books</h2>
+<a class="text-primary font-label-bold hover:underline flex items-center gap-1" href="#">
+                    See All <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Related Card 1 -->
+<div class="bg-white rounded-xl overflow-hidden border border-gray-100 shadow-ambient hover:shadow-hover transition-all duration-300 group">
+<div class="aspect-[3/4] overflow-hidden">
+<img alt="Physics Book" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="hardcover physics textbook with abstract scientific imagery on cover sitting on a desk" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCua7GH5z80dn-_cqVSSBfyhYElcjGRIiy-yeghHCAS3xJf27u2LaG7DVqbaJzvRUVNQBBGcc11bQOnAAJYycX34-3jnUXrEEp8nBsxjmCuDy_S-30ut_QQMwEowDJcE7Tem0XVRytJFIJMZJbyvAAhQXaYFZZyNFVPhNANEjmyw24262VxIuG4Tjnmagc7OFwRj0bQnQ4tMk3_89t6tvenDfftoKLta54E7A_qKFiSrygfeTF7zzVBt-f0h_b4gz1YylqjO970y_o"/>
+</div>
+<div class="p-4 space-y-2">
+<h4 class="font-label-bold text-on-surface line-clamp-1">Fundamentals of Physics</h4>
+<div class="flex items-center justify-between">
+<span class="text-primary font-bold">$30.00</span>
+<span class="text-xs text-gray-400">Near Campus</span>
+</div>
+</div>
+</div>
+<!-- Related Card 2 -->
+<div class="bg-white rounded-xl overflow-hidden border border-gray-100 shadow-ambient hover:shadow-hover transition-all duration-300 group">
+<div class="aspect-[3/4] overflow-hidden">
+<img alt="Lab Manual" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="spiral bound laboratory manual with colorful periodic table visible on the back cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD91N5rgduNH6kmAW7G9vKtl1O5mcpiAZbXtr9mmCaRtTAvv8ip5Pc2B0Xn-Ex9wqTlsNMEWln1AEVOfMreBpXtpDJBzQiMQtdBCt8VppnnOsDoqMRrHHwmO7AExzRiuNu6eBmsahJ2gWKcn9CQg3pwGttZLkJpiLWgMzRdT_hPQUy9TR__bIZ5byTAwCeBpy3CcNAHaKeJzIjXqEd4pSeLIFib1TShQ8n-M9BEKKzKdT6Q9KrWrnALoFK6LcfvVMYeDZVgg4SMJBc"/>
+</div>
+<div class="p-4 space-y-2">
+<h4 class="font-label-bold text-on-surface line-clamp-1">Organic Chemistry Lab Manual</h4>
+<div class="flex items-center justify-between">
+<span class="text-primary font-bold">$15.00</span>
+<span class="text-xs text-gray-400">Library West</span>
+</div>
+</div>
+</div>
+<!-- Related Card 3 -->
+<div class="bg-white rounded-xl overflow-hidden border border-gray-100 shadow-ambient hover:shadow-hover transition-all duration-300 group">
+<div class="aspect-[3/4] overflow-hidden">
+<img alt="Graphing Calculator" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="TI-84 graphing calculator lying on a math workbook with a ruler and pencil" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtZASmcDPZv-RQJuCccZhtvCeY2MqZwUBjdrimIEfT0yfKXXb600wlluP-XjD4neHOgEbgPDPY1s3vs7iFXurdU8NE1YcaYl6gawweSrG7vgU5_s7tD1FrLYf_TI-oUQ_-M_QP4wWdhXOF0MKYRE7RjqSybT5WVzzzZvAA_q3dfUqPyLPl-qpTb9Gjk8OnTTNvM6mO1gXIWvqjRIJMWp5FbH7jXa6FEoNoTkm7Emkus8u1Ew4VPJ--n6t_tU729ulJj8z-G3c9IB0"/>
+</div>
+<div class="p-4 space-y-2">
+<h4 class="font-label-bold text-on-surface line-clamp-1">TI-84 Plus CE Calculator</h4>
+<div class="flex items-center justify-between">
+<span class="text-primary font-bold">$85.00</span>
+<span class="text-xs text-gray-400">North Dorms</span>
+</div>
+</div>
+</div>
+<!-- Related Card 4 -->
+<div class="bg-white rounded-xl overflow-hidden border border-gray-100 shadow-ambient hover:shadow-hover transition-all duration-300 group">
+<div class="aspect-[3/4] overflow-hidden">
+<img alt="Notebooks" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="stack of unused premium spiral notebooks with colorful minimalist covers" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsDBTVJ-nH3Cfa7mtNB3Y6MKsZWiDLfkNcBTJDUM07tj2WCobyKUPib3Zl6Wq6xRAZzLEHvXBcR5gyrxkLS99LxPTVn9fV2gao-p5gjF-uzjNrUX4JevCZkLDcyqnDfwlV4dKXOi-v1ClLhSvX-RMNLFwnNM_tX9fqoATmlu4fFz1QDSZ-hEAMUOASGoHTNDxOOnJfBxfuPFBOgfT0cOkgEJR2qHExP5TgCE8hH-SWvcT7yN7MQ4D1tv0jWTZlZ4yNz_roz-z-4g8"/>
+</div>
+<div class="p-4 space-y-2">
+<h4 class="font-label-bold text-on-surface line-clamp-1">Premium Notebook Bundle</h4>
+<div class="flex items-center justify-between">
+<span class="text-primary font-bold">$10.00</span>
+<span class="text-xs text-gray-400">Student Union</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full h-16 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md border-t border-gray-100 dark:border-gray-800 flex justify-around items-center px-4 pb-safe z-50 shadow-[0_-4px_12px_rgba(5,150,105,0.08)] rounded-t-2xl">
+<div class="flex flex-col items-center justify-center text-gray-400 dark:text-gray-500 active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-['Public_Sans'] text-[10px] uppercase tracking-wider font-bold">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-emerald-600 dark:text-emerald-400 active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="storefront">storefront</span>
+<span class="font-['Public_Sans'] text-[10px] uppercase tracking-wider font-bold">Listings</span>
+</div>
+<div class="flex flex-col items-center justify-center text-gray-400 dark:text-gray-500 active:scale-90 transition-transform">
+<span class="material-symbols-outlined text-3xl" data-icon="add_circle">add_circle</span>
+<span class="font-['Public_Sans'] text-[10px] uppercase tracking-wider font-bold">Post</span>
+</div>
+<div class="flex flex-col items-center justify-center text-gray-400 dark:text-gray-500 active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="bookmark">bookmark</span>
+<span class="font-['Public_Sans'] text-[10px] uppercase tracking-wider font-bold">Saved</span>
+</div>
+<div class="flex flex-col items-center justify-center text-gray-400 dark:text-gray-500 active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="chat">chat</span>
+<span class="font-['Public_Sans'] text-[10px] uppercase tracking-wider font-bold">Messages</span>
+</div>
+</nav>
+<!-- Mobile Footer Padding -->
+<div class="h-20 md:hidden"></div>
+</body></html>

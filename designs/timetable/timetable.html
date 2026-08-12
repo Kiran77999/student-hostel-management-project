@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-high": "#1f2a3c",
+                        "outline": "#8b90a0",
+                        "inverse-surface": "#d8e3fb",
+                        "surface-bright": "#2f3a4c",
+                        "surface": "#081425",
+                        "surface-container": "#152031",
+                        "on-primary-fixed-variant": "#004493",
+                        "on-surface": "#d8e3fb",
+                        "error-container": "#93000a",
+                        "tertiary": "#bec6e0",
+                        "on-secondary": "#233143",
+                        "on-secondary-fixed": "#0d1c2d",
+                        "tertiary-container": "#8990a8",
+                        "secondary": "#b9c8de",
+                        "on-background": "#d8e3fb",
+                        "secondary-fixed-dim": "#b9c8de",
+                        "surface-tint": "#adc7ff",
+                        "secondary-fixed": "#d4e4fa",
+                        "on-error-container": "#ffdad6",
+                        "on-primary-container": "#00285b",
+                        "inverse-on-surface": "#263143",
+                        "on-primary": "#002e68",
+                        "surface-container-low": "#111c2d",
+                        "on-tertiary-fixed": "#131b2e",
+                        "secondary-container": "#39485a",
+                        "primary-container": "#4a8eff",
+                        "on-error": "#690005",
+                        "surface-container-highest": "#2a3548",
+                        "outline-variant": "#414754",
+                        "primary": "#adc7ff",
+                        "surface-container-lowest": "#040e1f",
+                        "on-tertiary": "#283044",
+                        "primary-fixed-dim": "#adc7ff",
+                        "background": "#081425",
+                        "primary-fixed": "#d8e2ff",
+                        "on-tertiary-container": "#22293d",
+                        "on-secondary-fixed-variant": "#39485a",
+                        "tertiary-fixed-dim": "#bec6e0",
+                        "on-secondary-container": "#a7b6cc",
+                        "surface-dim": "#081425",
+                        "inverse-primary": "#005bc0",
+                        "error": "#ffb4ab",
+                        "surface-variant": "#2a3548",
+                        "on-tertiary-fixed-variant": "#3f465c",
+                        "on-surface-variant": "#c1c6d7",
+                        "on-primary-fixed": "#001a41",
+                        "tertiary-fixed": "#dae2fd"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "lg": "24px",
+                        "md": "16px",
+                        "xl": "48px",
+                        "unit": "4px",
+                        "xs": "4px",
+                        "grid-margin": "32px",
+                        "sm": "8px",
+                        "grid-gutter": "12px"
+                    },
+                    "fontFamily": {
+                        "title-sm": ["Lexend"],
+                        "display-lg": ["Lexend"],
+                        "mono-data": ["Lexend"],
+                        "body-md": ["Lexend"],
+                        "label-caps": ["Lexend"],
+                        "headline-md": ["Lexend"]
+                    },
+                    "fontSize": {
+                        "title-sm": ["18px", {"lineHeight": "1.4", "letterSpacing": "0", "fontWeight": "500"}],
+                        "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "mono-data": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.02em", "fontWeight": "300"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
+                        "label-caps": ["12px", {"lineHeight": "1.2", "letterSpacing": "0.08em", "fontWeight": "600"}],
+                        "headline-md": ["24px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(30, 41, 59, 0.5);
+        }
+        .time-line {
+            background: linear-gradient(90deg, transparent, #22d3ee, transparent);
+        }
+        .timetable-grid {
+            display: grid;
+            grid-template-columns: 100px repeat(6, 1fr);
+        }
+    </style>
+</head>
+<body class="bg-surface font-body-md text-on-surface selection:bg-primary-container selection:text-on-primary-container">
+<!-- Sidebar Navigation -->
+<aside class="fixed left-0 top-0 h-full w-64 border-r border-slate-800 bg-slate-950 flex flex-col py-8 z-50">
+<div class="px-6">
+<h1 class="text-xl font-black text-slate-100 mb-8 font-display-lg tracking-tighter">Student Portal</h1>
+</div>
+<nav class="flex flex-col gap-1">
+<a class="text-slate-500 hover:text-slate-300 px-6 py-3 flex items-center gap-3 transition-colors font-label-caps uppercase tracking-widest" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+                Dashboard
+            </a>
+<a class="text-slate-500 hover:text-slate-300 px-6 py-3 flex items-center gap-3 transition-colors font-label-caps uppercase tracking-widest" href="#">
+<span class="material-symbols-outlined">fact_check</span>
+                Attendance
+            </a>
+<a class="bg-blue-500/10 text-cyan-400 border-r-2 border-cyan-400 font-semibold px-6 py-3 flex items-center gap-3 font-label-caps uppercase tracking-widest" href="#">
+<span class="material-symbols-outlined">calendar_today</span>
+                Schedule
+            </a>
+<a class="text-slate-500 hover:text-slate-300 px-6 py-3 flex items-center gap-3 transition-colors font-label-caps uppercase tracking-widest" href="#">
+<span class="material-symbols-outlined">grade</span>
+                Grades
+            </a>
+<a class="text-slate-500 hover:text-slate-300 px-6 py-3 flex items-center gap-3 transition-colors font-label-caps uppercase tracking-widest" href="#">
+<span class="material-symbols-outlined">settings</span>
+                Settings
+            </a>
+</nav>
+<div class="mt-auto px-6 border-t border-slate-800 pt-6">
+<div class="flex items-center gap-3">
+<img alt="Avatar" class="w-10 h-10 rounded-full border-2 border-cyan-400/30" data-alt="Close-up portrait of a young male university student with a friendly expression and modern spectacles" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBESGiOD-zmXrH2dIMvgbGcquqyTNEBUJWXh1R9RqzOMR2Hb1ZJrYAudxF_VkpTftXAZMqyUzkBzkDXRGQXS_sPQ8XKmS2ds8iEnBdZM_yYVFd0jeZaDt3zhnysGMOExpaYSEIVe7UVMHFKCBHerbFVN9ZB5QurtRZaGC3wvX9jBWX1k_wbz05YMyW4jJ3adpSjZuL3r2Skm8P6Hoes2iH6CFRszoexhqR_xx3m8mKTX6tvs5klTGUo2tNap3KTkmAi7hLCcPMARdU"/>
+<div>
+<p class="font-title-sm text-sm text-slate-200">Alex Rivers</p>
+<p class="text-xs text-slate-500 font-mono-data">V2.0.4 - Research Lab</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 w-full z-40 h-16 bg-slate-950/80 backdrop-blur-xl border-b border-slate-800 flex justify-between items-center px-6 ml-64 max-w-[calc(100%-16rem)]">
+<div class="flex items-center gap-4">
+<span class="text-lg font-bold tracking-tighter text-blue-500 dark:text-cyan-400 font-title-sm">Academia Command</span>
+<div class="h-4 w-[1px] bg-slate-800"></div>
+<div class="flex items-center gap-2 bg-slate-900/50 px-3 py-1.5 rounded-lg border border-slate-800">
+<span class="material-symbols-outlined text-sm text-slate-400">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-xs text-slate-300 w-48" placeholder="Search sessions..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-slate-400 hover:text-cyan-400 transition-colors">notifications</button>
+<div class="bg-cyan-400/10 text-cyan-400 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest border border-cyan-400/20">Active Session</div>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="ml-64 pt-24 px-8 pb-12 min-h-screen bg-surface-dim relative">
+<!-- Background Pattern -->
+<div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(#334155 1px, transparent 1px); background-size: 40px 40px;"></div>
+<div class="relative z-10 max-w-7xl mx-auto">
+<!-- Header Section -->
+<div class="mb-10 flex justify-between items-end">
+<div>
+<h2 class="font-display-lg text-4xl text-on-surface mb-2">Weekly Schedule</h2>
+<p class="font-body-md text-outline flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">location_on</span>
+                        Dept. of Computer Science | Room #G2
+                    </p>
+</div>
+<div class="flex gap-2">
+<button class="bg-surface-container hover:bg-surface-container-high border border-outline-variant px-4 py-2 rounded-xl flex items-center gap-2 text-sm transition-all">
+<span class="material-symbols-outlined text-sm">print</span>
+                        Export PDF
+                    </button>
+<button class="bg-primary-container text-on-primary-container px-6 py-2 rounded-xl flex items-center gap-2 text-sm font-semibold transition-all">
+<span class="material-symbols-outlined text-sm">add</span>
+                        New Task
+                    </button>
+</div>
+</div>
+<!-- Timetable Component -->
+<div class="glass-card rounded-2xl overflow-hidden shadow-2xl border border-slate-800/50">
+<!-- Day Headers -->
+<div class="timetable-grid bg-slate-900/80 border-b border-slate-800/50 py-4">
+<div class="text-center font-label-caps text-slate-500 self-center">TIME</div>
+<div class="text-center">
+<span class="block font-title-sm text-on-surface text-sm uppercase">Monday</span>
+<span class="text-[10px] text-slate-500 font-mono-data uppercase">OCT 23</span>
+</div>
+<div class="text-center">
+<span class="block font-title-sm text-on-surface text-sm uppercase">Tuesday</span>
+<span class="text-[10px] text-slate-500 font-mono-data uppercase">OCT 24</span>
+</div>
+<div class="text-center">
+<span class="block font-title-sm text-cyan-400 text-sm uppercase font-bold">Wednesday</span>
+<span class="text-[10px] text-cyan-500 font-mono-data uppercase">OCT 25</span>
+</div>
+<div class="text-center">
+<span class="block font-title-sm text-on-surface text-sm uppercase">Thursday</span>
+<span class="text-[10px] text-slate-500 font-mono-data uppercase">OCT 26</span>
+</div>
+<div class="text-center">
+<span class="block font-title-sm text-on-surface text-sm uppercase">Friday</span>
+<span class="text-[10px] text-slate-500 font-mono-data uppercase">OCT 27</span>
+</div>
+<div class="text-center">
+<span class="block font-title-sm text-on-surface text-sm uppercase">Saturday</span>
+<span class="text-[10px] text-slate-500 font-mono-data uppercase">OCT 28</span>
+</div>
+</div>
+<!-- Grid Rows -->
+<div class="relative">
+<!-- Current Time Indicator -->
+<div class="absolute w-full h-[2px] time-line z-30 pointer-events-none" style="top: 245px;">
+<div class="absolute -left-1 -top-1 w-2.5 h-2.5 bg-cyan-400 rounded-full shadow-[0_0_10px_#22d3ee] animate-pulse"></div>
+</div>
+<!-- 10:00 - 11:30 -->
+<div class="timetable-grid border-b border-slate-800/30">
+<div class="p-4 flex flex-col items-center justify-center border-r border-slate-800/30">
+<span class="text-xs font-mono-data text-slate-400">10:00</span>
+<div class="h-8 w-px bg-slate-800/50 my-1"></div>
+<span class="text-xs font-mono-data text-slate-400">11:30</span>
+</div>
+<div class="p-2">
+<div class="h-full bg-blue-500/10 border-l-4 border-blue-500 rounded-lg p-3 hover:bg-blue-500/20 transition-all cursor-pointer group">
+<span class="text-[10px] font-bold text-blue-400 block mb-1">PGPE-I</span>
+<h4 class="text-sm font-semibold text-slate-100 leading-tight">Advanced Algorithms</h4>
+<p class="text-[10px] text-slate-500 mt-2 flex items-center gap-1"><span class="material-symbols-outlined text-[10px]">apartment</span> Room #G2</p>
+</div>
+</div>
+<div class="p-2">
+<div class="h-full bg-purple-500/10 border-l-4 border-purple-500 rounded-lg p-3 hover:bg-purple-500/20 transition-all cursor-pointer">
+<span class="text-[10px] font-bold text-purple-400 block mb-1">ELECTIVE</span>
+<h4 class="text-sm font-semibold text-slate-100 leading-tight">MFCS</h4>
+<p class="text-[10px] text-slate-500 mt-2">Prof. Zhang</p>
+</div>
+</div>
+<div class="p-2">
+<div class="h-full bg-blue-500/10 border-l-4 border-blue-500 rounded-lg p-3 hover:bg-blue-500/20 transition-all cursor-pointer">
+<span class="text-[10px] font-bold text-blue-400 block mb-1">PGPE-I</span>
+<h4 class="text-sm font-semibold text-slate-100 leading-tight">Advanced Algorithms</h4>
+</div>
+</div>
+<div class="p-2">
+<div class="h-full bg-purple-500/10 border-l-4 border-purple-500 rounded-lg p-3 hover:bg-purple-500/20 transition-all cursor-pointer">
+<span class="text-[10px] font-bold text-purple-400 block mb-1">ELECTIVE</span>
+<h4 class="text-sm font-semibold text-slate-100 leading-tight">MFCS</h4>
+</div>
+</div>
+<div class="p-2">
+<div class="h-full bg-blue-500/10 border-l-4 border-blue-500 rounded-lg p-3 hover:bg-blue-500/20 transition-all cursor-pointer">
+<span class="text-[10px] font-bold text-blue-400 block mb-1">PGPE-I</span>
+<h4 class="text-sm font-semibold text-slate-100 leading-tight">Advanced Algorithms</h4>
+</div>
+</div>
+<div class="p-2">
+<div class="h-full bg-emerald-500/10 border-l-4 border-emerald-500 rounded-lg p-3 flex flex-col justify-center items-center text-center opacity-80 border-dashed border-2">
+<span class="material-symbols-outlined text-emerald-400 mb-1">event_available</span>
+<span class="text-[10px] font-bold text-emerald-400">Library Hours</span>
+</div>
+</div>
+</div>
+<!-- 11:30 - 01:00 -->
+<div class="timetable-grid border-b border-slate-800/30">
+<div class="p-4 flex flex-col items-center justify-center border-r border-slate-800/30">
+<span class="text-xs font-mono-data text-slate-400">11:30</span>
+<div class="h-8 w-px bg-slate-800/50 my-1"></div>
+<span class="text-xs font-mono-data text-slate-400">01:00</span>
+</div>
+<div class="p-2">
+<div class="h-full bg-cyan-500/10 border-l-4 border-cyan-500 rounded-lg p-3 hover:bg-cyan-500/20 transition-all cursor-pointer">
+<span class="text-[10px] font-bold text-cyan-400 block mb-1">PGPE-II</span>
+<h4 class="text-sm font-semibold text-slate-100 leading-tight">Deep Learning</h4>
+</div>
+</div>
+<div class="p-2">
+<div class="h-full bg-orange-500/10 border-l-4 border-orange-500 rounded-lg p-3 hover:bg-orange-500/20 transition-all cursor-pointer">
+<span class="text-[10px] font-bold text-orange-400 block mb-1">CORE</span>
+<h4 class="text-sm font-semibold text-slate-100 leading-tight">Software Quality Engineering</h4>
+</div>
+</div>
+<div class="p-2">
+<div class="h-full bg-cyan-500/10 border-l-4 border-cyan-500 rounded-lg p-3 hover:bg-cyan-500/20 transition-all cursor-pointer">
+<span class="text-[10px] font-bold text-cyan-400 block mb-1">PGPE-II</span>
+<h4 class="text-sm font-semibold text-slate-100 leading-tight">Deep Learning</h4>
+</div>
+</div>
+<div class="p-2">
+<div class="h-full bg-orange-500/10 border-l-4 border-orange-500 rounded-lg p-3 hover:bg-orange-500/20 transition-all cursor-pointer">
+<span class="text-[10px] font-bold text-orange-400 block mb-1">CORE</span>
+<h4 class="text-sm font-semibold text-slate-100 leading-tight">SQE</h4>
+</div>
+</div>
+<div class="p-2">
+<div class="h-full bg-cyan-500/10 border-l-4 border-cyan-500 rounded-lg p-3 hover:bg-cyan-500/20 transition-all cursor-pointer">
+<span class="text-[10px] font-bold text-cyan-400 block mb-1">PGPE-II</span>
+<h4 class="text-sm font-semibold text-slate-100 leading-tight">Deep Learning</h4>
+</div>
+</div>
+<div class="p-2">
+<div class="h-full bg-slate-800/20 rounded-lg p-3 flex items-center justify-center">
+<span class="text-[10px] text-slate-600 font-mono-data italic uppercase tracking-tighter">Self Study</span>
+</div>
+</div>
+</div>
+<!-- 01:00 - 02:00 LUNCH -->
+<div class="timetable-grid bg-slate-900/40 border-b border-slate-800/30">
+<div class="p-2 flex flex-col items-center justify-center border-r border-slate-800/30">
+<span class="text-xs font-mono-data text-slate-600 uppercase tracking-widest rotate-180 [writing-mode:vertical-lr]">Break</span>
+</div>
+<div class="col-span-6 flex items-center justify-center gap-4 py-3">
+<div class="h-px w-24 bg-gradient-to-r from-transparent to-slate-700"></div>
+<span class="material-symbols-outlined text-slate-500 text-lg">restaurant</span>
+<span class="font-label-caps text-slate-500 text-[10px] tracking-widest uppercase">Research Recess &amp; Lunch Interval (01:00 PM - 02:00 PM)</span>
+<div class="h-px w-24 bg-gradient-to-l from-transparent to-slate-700"></div>
+</div>
+</div>
+<!-- 02:00 - 03:30 -->
+<div class="timetable-grid border-b border-slate-800/30">
+<div class="p-4 flex flex-col items-center justify-center border-r border-slate-800/30">
+<span class="text-xs font-mono-data text-slate-400">02:00</span>
+<div class="h-8 w-px bg-slate-800/50 my-1"></div>
+<span class="text-xs font-mono-data text-slate-400">03:30</span>
+</div>
+<div class="p-2">
+<div class="h-full bg-rose-500/10 border-l-4 border-rose-500 rounded-lg p-3 hover:bg-rose-500/20 transition-all cursor-pointer">
+<span class="text-[10px] font-bold text-rose-400 block mb-1">RESEARCH</span>
+<h4 class="text-sm font-semibold text-slate-100 leading-tight">RM &amp; IPR</h4>
+<p class="text-[10px] text-slate-500 mt-2">Dr. Sarah Miller</p>
+</div>
+</div>
+<div class="p-2 row-span-2">
+<div class="h-full bg-indigo-500/10 border-l-4 border-indigo-500 rounded-lg p-3 hover:bg-indigo-500/20 transition-all cursor-pointer flex flex-col">
+<span class="text-[10px] font-bold text-indigo-400 block mb-1">LAB SESSION</span>
+<h4 class="text-sm font-semibold text-slate-100 leading-tight mb-2">DL Lab (G5)</h4>
+<div class="mt-auto pt-4 border-t border-indigo-500/20">
+<div class="flex -space-x-2">
+<img alt="Student" class="w-6 h-6 rounded-full border border-slate-900" data-alt="Close-up of a student working in a high-tech computer lab with blue neon lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8DI1pU3euVZLEGTFAwsyFJBwpMVauJpf7rbdSf-pyB-y5tAc8KJ2UPtks95-DemAZa5j5DGOZxrUUrV7l4y1iO-6zWooVHc1MAyxcIE9Mjp-d_ElPZjWc4sor3DjDETc39a6hTAuwwUxqLGAhnLPuHIy8ExNWZdNQWGDrLHFbhJl1VK2EPrkGB4dMb78pXB_hZnWOkjCkGUptIl5WoeNZ9mShgVFIseBYU6o-TNhjvW3jliF-Ix8fVVc4ME_z5_cbqUVBhu1w4Ec"/>
+<img alt="Student" class="w-6 h-6 rounded-full border border-slate-900" data-alt="Student focusing on multiple monitors displaying complex code and data visualizations" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAM76OIAZu453LpZw6nUTqH3MWke7LDUw6AtLkNeCLAxmS1XjSfQT84483V8pIlrC6zJu-9CM9ixIFwXqtT9FnLCYhj58k2ksCw4VKieeV-3_Rs-eshlKV-5FU1q0pNtunkjiYWT9EuncMD1Yi6VLz0lwq0VV1etFiaKA0KepieKPr1GaP5Krp5cESRIPNvXsIO1S6AfpMmn42qQI67V-0SEWTUfw6VYapf0yzbgKHOXn9jPMN12L4nBpdhF8Fho3eHomyOKnIO6kI"/>
+<div class="w-6 h-6 rounded-full bg-indigo-500 flex items-center justify-center text-[8px] font-bold text-white border border-slate-900">+12</div>
+</div>
+</div>
+</div>
+</div>
+<div class="p-2">
+<div class="h-full bg-rose-500/10 border-l-4 border-rose-500 rounded-lg p-3 hover:bg-rose-500/20 transition-all cursor-pointer">
+<span class="text-[10px] font-bold text-rose-400 block mb-1">RESEARCH</span>
+<h4 class="text-sm font-semibold text-slate-100 leading-tight">RM &amp; IPR</h4>
+</div>
+</div>
+<div class="p-2 row-span-2">
+<div class="h-full bg-indigo-500/10 border-l-4 border-indigo-500 rounded-lg p-3 hover:bg-indigo-500/20 transition-all cursor-pointer flex flex-col">
+<span class="text-[10px] font-bold text-indigo-400 block mb-1">LAB SESSION</span>
+<h4 class="text-sm font-semibold text-slate-100 leading-tight">AA Lab</h4>
+<div class="mt-auto flex items-center gap-2 text-indigo-300">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">terminal</span>
+<span class="text-[10px] uppercase font-bold">In Progress</span>
+</div>
+</div>
+</div>
+<div class="p-2">
+<div class="h-full bg-rose-500/10 border-l-4 border-rose-500 rounded-lg p-3 hover:bg-rose-500/20 transition-all cursor-pointer">
+<span class="text-[10px] font-bold text-rose-400 block mb-1">RESEARCH</span>
+<h4 class="text-sm font-semibold text-slate-100 leading-tight">RM &amp; IPR</h4>
+</div>
+</div>
+<div class="p-2">
+<div class="h-full border-2 border-slate-800 border-dashed rounded-lg p-3 flex flex-col justify-center items-center text-slate-700">
+<span class="material-symbols-outlined text-xl mb-1">block</span>
+<span class="text-[8px] font-bold uppercase tracking-widest">No Class</span>
+</div>
+</div>
+</div>
+<!-- 03:30 - 05:00 -->
+<div class="timetable-grid border-b border-slate-800/30">
+<div class="p-4 flex flex-col items-center justify-center border-r border-slate-800/30">
+<span class="text-xs font-mono-data text-slate-400">03:30</span>
+<div class="h-8 w-px bg-slate-800/50 my-1"></div>
+<span class="text-xs font-mono-data text-slate-400">05:00</span>
+</div>
+<div class="p-2">
+<div class="h-full bg-slate-800/20 border-l-4 border-slate-600 rounded-lg p-3">
+<span class="text-[10px] font-bold text-slate-500 block mb-1">SEMINAR</span>
+<h4 class="text-sm font-semibold text-slate-400 leading-tight">Departmental Briefing</h4>
+</div>
+</div>
+<!-- DL LAB SPAN -->
+<div class="p-2 bg-slate-900/20"></div>
+<div class="p-2">
+<div class="h-full bg-slate-800/20 border-l-4 border-slate-600 rounded-lg p-3">
+<h4 class="text-sm font-semibold text-slate-400 leading-tight">Project Mentoring</h4>
+</div>
+</div>
+<!-- AA LAB SPAN -->
+<div class="p-2 bg-slate-900/20"></div>
+<div class="p-2">
+<div class="h-full bg-slate-800/20 border-l-4 border-slate-600 rounded-lg p-3">
+<h4 class="text-sm font-semibold text-slate-400 leading-tight">Weekly Review</h4>
+</div>
+</div>
+<div class="p-2">
+<div class="h-full bg-amber-500/10 border-l-4 border-amber-500 rounded-lg p-3 hover:bg-amber-500/20 transition-all cursor-pointer">
+<span class="text-[10px] font-bold text-amber-400 block mb-1">CLUB ACTIVITY</span>
+<h4 class="text-sm font-semibold text-slate-100 leading-tight">Coding Society</h4>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer Meta Information -->
+<div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="glass-card p-6 rounded-2xl flex items-center gap-5">
+<div class="w-12 h-12 rounded-xl bg-blue-500/20 flex items-center justify-center text-blue-400">
+<span class="material-symbols-outlined text-3xl">school</span>
+</div>
+<div>
+<p class="text-[10px] font-bold text-slate-500 uppercase tracking-tighter">Academic Head</p>
+<p class="text-sm font-semibold text-slate-200">Dept. of Computer Science</p>
+</div>
+</div>
+<div class="glass-card p-6 rounded-2xl flex items-center gap-5">
+<div class="w-12 h-12 rounded-xl bg-cyan-500/20 flex items-center justify-center text-cyan-400">
+<span class="material-symbols-outlined text-3xl">meeting_room</span>
+</div>
+<div>
+<p class="text-[10px] font-bold text-slate-500 uppercase tracking-tighter">Assigned Venue</p>
+<p class="text-sm font-semibold text-slate-200">Main Lab - Room #G2</p>
+</div>
+</div>
+<div class="glass-card p-6 rounded-2xl flex items-center gap-5">
+<div class="w-12 h-12 rounded-xl bg-indigo-500/20 flex items-center justify-center text-indigo-400">
+<span class="material-symbols-outlined text-3xl">info</span>
+</div>
+<div>
+<p class="text-[10px] font-bold text-slate-500 uppercase tracking-tighter">Current Period</p>
+<p class="text-sm font-semibold text-slate-200">Deep Learning Lab (Active)</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- FAB Action Button -->
+<button class="fixed bottom-8 right-8 w-16 h-16 bg-cyan-400 text-slate-950 rounded-full shadow-[0_0_20px_rgba(34,211,238,0.4)] flex items-center justify-center hover:scale-110 active:scale-95 transition-all z-50">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">calendar_add_on</span>
+</button>
+</body></html>

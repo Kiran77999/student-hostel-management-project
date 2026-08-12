@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Post an Item | CampusMarket</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;900&amp;family=Inter:wght@500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-fixed-dim": "#ffb3ae",
+                    "on-tertiary-container": "#fffbff",
+                    "inverse-on-surface": "#ebf1ff",
+                    "inverse-surface": "#2a313d",
+                    "outline": "#6d7a72",
+                    "on-secondary-fixed-variant": "#005236",
+                    "on-primary-fixed": "#002114",
+                    "on-secondary-fixed": "#002113",
+                    "on-primary": "#ffffff",
+                    "secondary": "#006c49",
+                    "on-error": "#ffffff",
+                    "secondary-fixed-dim": "#4edea3",
+                    "on-tertiary-fixed": "#410004",
+                    "surface-bright": "#f9f9ff",
+                    "background": "#f9f9ff",
+                    "surface-container": "#e7eefe",
+                    "primary-container": "#00855d",
+                    "error-container": "#ffdad6",
+                    "surface-variant": "#dce2f3",
+                    "surface-dim": "#d3daea",
+                    "inverse-primary": "#68dba9",
+                    "on-tertiary-fixed-variant": "#7f2928",
+                    "tertiary": "#9b3e3b",
+                    "on-secondary": "#ffffff",
+                    "primary-fixed": "#85f8c4",
+                    "secondary-fixed": "#6ffbbe",
+                    "surface-tint": "#006c4a",
+                    "surface": "#f9f9ff",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-container": "#ba5551",
+                    "on-background": "#151c27",
+                    "primary": "#006948",
+                    "outline-variant": "#bccac0",
+                    "on-surface-variant": "#3d4a42",
+                    "primary-fixed-dim": "#68dba9",
+                    "tertiary-fixed": "#ffdad7",
+                    "surface-container-lowest": "#ffffff",
+                    "error": "#ba1a1a",
+                    "surface-container-low": "#f0f3ff",
+                    "surface-container-high": "#e2e8f8",
+                    "on-primary-container": "#f5fff7",
+                    "on-error-container": "#93000a",
+                    "on-primary-fixed-variant": "#005137",
+                    "surface-container-highest": "#dce2f3",
+                    "secondary-container": "#6cf8bb",
+                    "on-surface": "#151c27",
+                    "on-secondary-container": "#00714d"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "sm": "12px",
+                    "base": "8px",
+                    "xl": "80px",
+                    "xs": "4px",
+                    "lg": "48px",
+                    "gutter": "16px",
+                    "md": "24px",
+                    "margin": "24px"
+            },
+            "fontFamily": {
+                    "h3": ["Public Sans"],
+                    "h1": ["Public Sans"],
+                    "body-lg": ["Public Sans"],
+                    "body-md": ["Public Sans"],
+                    "h2": ["Public Sans"],
+                    "label-bold": ["Inter"],
+                    "label-sm": ["Inter"]
+            },
+            "fontSize": {
+                    "h3": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "h1": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "h2": ["30px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "label-bold": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "label-sm": ["12px", {"lineHeight": "1.2", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+        }
+        .step-active { color: #006948; border-color: #006948; }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+    </style>
+</head>
+<body class="bg-surface font-body-md text-on-surface antialiased">
+<!-- TopNavBar -->
+<header class="bg-white dark:bg-gray-900 border-b border-gray-100 dark:border-gray-800 shadow-sm fixed top-0 z-50 w-full">
+<div class="flex items-center justify-between px-4 h-16 w-full max-w-7xl mx-auto font-['Public_Sans'] antialiased">
+<div class="flex items-center gap-2">
+<button class="md:hidden p-2 text-gray-500 hover:bg-gray-50 rounded-lg active:scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="close">close</span>
+</button>
+<span class="text-xl font-black tracking-tight text-emerald-600 dark:text-emerald-400">CampusMarket</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden md:flex gap-6 items-center px-6">
+<span class="text-gray-500 dark:text-gray-400 font-medium">Draft Saved at 10:42 AM</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 text-gray-500 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors rounded-full active:scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 text-gray-500 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors rounded-full active:scale-95 duration-200">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</button>
+</div>
+</div>
+</div>
+</header>
+<main class="pt-24 pb-32 px-4 max-w-3xl mx-auto">
+<!-- Header Info -->
+<div class="mb-md">
+<h1 class="font-h1 text-h1 text-on-background mb-xs">List an Item</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Reach thousands of students on campus. Verification ensures a safe trade.</p>
+</div>
+<!-- Form Steps -->
+<div class="space-y-md">
+<!-- Step 1: Photos -->
+<section class="bg-white rounded-xl border border-outline-variant p-md shadow-sm">
+<div class="flex items-center gap-sm mb-md">
+<div class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center font-label-bold text-label-bold">1</div>
+<h2 class="font-h3 text-h3">Upload Photos</h2>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-sm">
+<!-- Main Drag & Drop -->
+<div class="col-span-2 aspect-square md:aspect-auto md:h-full border-2 border-dashed border-outline-variant rounded-lg flex flex-col items-center justify-center p-md bg-surface-container-low hover:bg-surface-container transition-colors cursor-pointer group">
+<span class="material-symbols-outlined text-primary mb-sm text-4xl" data-icon="add_a_photo">add_a_photo</span>
+<p class="font-label-bold text-label-bold text-on-surface text-center">Add Main Photo</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant text-center mt-xs">Drag or click to upload</p>
+</div>
+<!-- Small Slots -->
+<div class="aspect-square border border-outline-variant rounded-lg flex items-center justify-center bg-surface-container-lowest hover:bg-surface-container transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-outline" data-icon="add">add</span>
+</div>
+<div class="aspect-square border border-outline-variant rounded-lg flex items-center justify-center bg-surface-container-lowest hover:bg-surface-container transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-outline" data-icon="add">add</span>
+</div>
+</div>
+<p class="mt-sm font-label-sm text-label-sm text-on-surface-variant italic">Add up to 8 photos. High-quality images sell 3x faster.</p>
+</section>
+<!-- Step 2: Item Info -->
+<section class="bg-white rounded-xl border border-outline-variant p-md shadow-sm">
+<div class="flex items-center gap-sm mb-md">
+<div class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center font-label-bold text-label-bold">2</div>
+<h2 class="font-h3 text-h3">Item Details</h2>
+</div>
+<div class="space-y-md">
+<div>
+<label class="block font-label-bold text-label-bold text-on-surface mb-xs">Title</label>
+<input class="w-full h-12 px-sm border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all" placeholder="e.g. Organic Chemistry Textbook - 5th Edition" type="text"/>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<div>
+<label class="block font-label-bold text-label-bold text-on-surface mb-xs">Category</label>
+<div class="relative">
+<select class="w-full h-12 px-sm border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none appearance-none bg-white">
+<option>Select Category</option>
+<option>Books &amp; Study Material</option>
+<option>Electronics</option>
+<option>Dorm Essentials</option>
+<option>Clothing</option>
+</select>
+<span class="material-symbols-outlined absolute right-sm top-1/2 -translate-y-1/2 pointer-events-none text-on-surface-variant" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+<div>
+<label class="block font-label-bold text-label-bold text-on-surface mb-xs">Condition</label>
+<div class="relative">
+<select class="w-full h-12 px-sm border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none appearance-none bg-white">
+<option>Like New</option>
+<option>Good</option>
+<option>Fair</option>
+<option>Poor</option>
+</select>
+<span class="material-symbols-outlined absolute right-sm top-1/2 -translate-y-1/2 pointer-events-none text-on-surface-variant" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+</div>
+<div>
+<label class="block font-label-bold text-label-bold text-on-surface mb-xs">Price</label>
+<div class="relative max-w-[200px]">
+<span class="absolute left-sm top-1/2 -translate-y-1/2 font-label-bold text-on-surface-variant">$</span>
+<input class="w-full h-12 pl-8 pr-sm border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition-all" placeholder="0.00" type="number"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Step 3: Pickup Details -->
+<section class="bg-white rounded-xl border border-outline-variant p-md shadow-sm">
+<div class="flex items-center gap-sm mb-md">
+<div class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center font-label-bold text-label-bold">3</div>
+<h2 class="font-h3 text-h3">Pickup Details</h2>
+</div>
+<div class="mb-md">
+<label class="block font-label-bold text-label-bold text-on-surface mb-sm">Campus Location Preference</label>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-sm">
+<label class="flex items-center p-sm border border-outline-variant rounded-lg cursor-pointer hover:border-primary hover:bg-surface-container-low transition-all">
+<input checked="" class="w-5 h-5 text-primary border-outline-variant focus:ring-primary" name="location" type="radio"/>
+<div class="ml-sm">
+<p class="font-label-bold text-label-bold">The Quad / Library</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Central, high visibility</p>
+</div>
+</label>
+<label class="flex items-center p-sm border border-outline-variant rounded-lg cursor-pointer hover:border-primary hover:bg-surface-container-low transition-all">
+<input class="w-5 h-5 text-primary border-outline-variant focus:ring-primary" name="location" type="radio"/>
+<div class="ml-sm">
+<p class="font-label-bold text-label-bold">North Housing</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Near residential halls</p>
+</div>
+</label>
+<label class="flex items-center p-sm border border-outline-variant rounded-lg cursor-pointer hover:border-primary hover:bg-surface-container-low transition-all">
+<input class="w-5 h-5 text-primary border-outline-variant focus:ring-primary" name="location" type="radio"/>
+<div class="ml-sm">
+<p class="font-label-bold text-label-bold">Student Union</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Inside the food court</p>
+</div>
+</label>
+<label class="flex items-center p-sm border border-outline-variant rounded-lg cursor-pointer hover:border-primary hover:bg-surface-container-low transition-all">
+<input class="w-5 h-5 text-primary border-outline-variant focus:ring-primary" name="location" type="radio"/>
+<div class="ml-sm">
+<p class="font-label-bold text-label-bold">Other / DM me</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Specify in chat</p>
+</div>
+</label>
+</div>
+</div>
+<div class="bg-primary-fixed text-on-primary-fixed-variant p-sm rounded-lg flex gap-sm">
+<span class="material-symbols-outlined flex-shrink-0" data-icon="verified_user">verified_user</span>
+<p class="font-label-sm text-label-sm">Only verified students from your university will be able to see your specific pickup preferences.</p>
+</div>
+</section>
+</div>
+<!-- Submission Actions -->
+<div class="mt-lg flex flex-col sm:flex-row gap-sm items-center justify-between">
+<button class="w-full sm:w-auto px-lg py-sm font-label-bold text-label-bold text-on-surface-variant hover:bg-surface-container rounded-lg active:scale-95 transition-all">
+                Cancel &amp; Discard
+            </button>
+<div class="w-full sm:w-auto flex flex-col sm:flex-row gap-sm">
+<button class="w-full sm:w-auto px-lg py-sm font-label-bold text-label-bold text-primary border border-primary hover:bg-primary-fixed rounded-lg active:scale-95 transition-all">
+                    Save as Draft
+                </button>
+<button class="w-full sm:w-auto px-xl py-sm font-label-bold text-label-bold text-on-primary bg-primary-container shadow-lg hover:brightness-110 rounded-lg active:scale-95 transition-all">
+                    Post Item
+                </button>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full h-16 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md border-t border-gray-100 dark:border-gray-800 shadow-[0_-4px_12px_rgba(5,150,105,0.08)] flex justify-around items-center px-4 pb-safe z-50">
+<a class="flex flex-col items-center justify-center text-gray-400 dark:text-gray-500 font-['Public_Sans'] text-[10px] uppercase tracking-wider font-bold" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span>Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-400 dark:text-gray-500 font-['Public_Sans'] text-[10px] uppercase tracking-wider font-bold" href="#">
+<span class="material-symbols-outlined" data-icon="storefront">storefront</span>
+<span>Listings</span>
+</a>
+<a class="flex flex-col items-center justify-center text-emerald-600 dark:text-emerald-400 font-['Public_Sans'] text-[10px] uppercase tracking-wider font-bold scale-110" href="#">
+<span class="material-symbols-outlined text-3xl" data-icon="add_circle" data-weight="fill" style="font-variation-settings: 'FILL' 1;">add_circle</span>
+<span>Post</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-400 dark:text-gray-500 font-['Public_Sans'] text-[10px] uppercase tracking-wider font-bold" href="#">
+<span class="material-symbols-outlined" data-icon="bookmark">bookmark</span>
+<span>Saved</span>
+</a>
+<a class="flex flex-col items-center justify-center text-gray-400 dark:text-gray-500 font-['Public_Sans'] text-[10px] uppercase tracking-wider font-bold" href="#">
+<span class="material-symbols-outlined" data-icon="chat">chat</span>
+<span>Messages</span>
+</a>
+</nav>
+<!-- Success Feedback Overlay (Hidden by default) -->
+<div class="fixed top-20 right-4 bg-on-surface text-surface py-2 px-4 rounded-lg shadow-xl flex items-center gap-2 transform translate-x-[150%] transition-transform duration-500 z-[100]" id="draft-saved-toast">
+<span class="material-symbols-outlined text-emerald-400" data-icon="check_circle" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-label-bold text-label-sm">Draft saved automatically</span>
+</div>
+</body></html>
