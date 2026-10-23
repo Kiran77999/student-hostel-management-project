@@ -1,0 +1,27 @@
+# Render Blueprint. Deploy this file from repository path hostel-app/render.yaml.
+services:
+  - type: web
+    name: hostelhub-kiran
+    runtime: docker
+    plan: free
+    rootDir: hostel-app
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /api/health
+    envVars:
+      - key: SPRING_PROFILES_ACTIVE
+        value: production
+      - key: DB_SCHEMA_SUFFIX
+        value: -postgres
+      - key: DATABASE_URL
+        fromDatabase:
+          name: hostelhub-db
+          property: connectionString
+      - key: ADMIN_EMAIL
+        sync: false
+      - key: ADMIN_PASSWORD
+        sync: false
+databases:
+  - name: hostelhub-db
+    plan: free
+    databaseName: hostelhub
+    user: hostelhub
