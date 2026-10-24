@@ -4,7 +4,7 @@ A React + Java 17 / Spring Boot application for hostel administration and reside
 
 ## What is implemented
 
-- Administrator and student login with BCrypt passwords, server-side sessions, CSRF protection and role checks.
+- Administrator, student, warden and chef login with BCrypt passwords, server-side sessions, CSRF protection and role checks.
 - Student registration and administrator-created residents.
 - Rooms, capacities, monthly fees, allocations and vacating. Transactions and row locks prevent overbooking.
 - Fee invoices, offline payment references, printable receipts and outstanding balances. No online payment gateway is claimed.
@@ -14,6 +14,32 @@ A React + Java 17 / Spring Boot application for hostel administration and reside
 - Notice publishing and removal.
 - Dashboard, searches, CSV exports and administrative audit history.
 - Password changes and responsive layouts.
+
+## Four dashboards and permissions
+
+All four roles use the same sign-in page. The server determines the role from the account and React opens the matching dashboard. There is no public staff registration or client-side role switch.
+
+| Capability | Student | Admin | Warden | Chef |
+|---|---|---|---|---|
+| Own room, fees, leave and attendance | Yes | All residents | Residence records only | No |
+| Create residents, rooms and fee invoices | No | Yes | No | No |
+| Allocate/vacate rooms | No | Yes | Yes | No |
+| Review complaints and leave; mark attendance | No | Yes | Yes | No |
+| Create Warden/Chef accounts | No | Yes | No | No |
+| Read mess menu | Yes | Yes | Yes | Yes |
+| Publish daily menu | No | Yes | No | Yes |
+| Set own meal attendance preferences | Yes | No | No | No |
+| Read aggregate meal planning counts | No | Yes | Yes | Yes |
+| Submit food feedback | Yes | No | No | No |
+| Respond to food feedback | No | Yes | No | Yes |
+
+Administrator workflow: **Staff accounts → Add staff → choose WARDEN or CHEF**, enter a unique staff ID, email and password, then save. Use each account in a separate browser profile or sign out before switching roles. Staff accounts never expose password hashes in list responses.
+
+The Warden dashboard highlights residents, pending leave, open complaints and today's attendance. The Chef dashboard highlights estimated meal counts, today's menu and unresolved food feedback. Meal estimates are allocated residents minus approved leave and per-meal opt-outs; they are planning figures, not meals served. Food feedback does not expose student IDs to kitchen staff.
+
+Additional local demo credentials (demo profile only): `warden@hostel.local` / `Warden@12345` and `chef@hostel.local` / `Chef@12345`. Production does not create these accounts; the administrator creates real staff credentials.
+
+The upgrade adds three tables with `CREATE TABLE IF NOT EXISTS` and preserves existing user accounts and residence records: `mess_menu`, `meal_preferences`, `food_feedback`.
 
 ## Repository layout
 
@@ -93,7 +119,7 @@ React components → same-origin HTTPS API → Spring Security → REST controll
 
 This is a layered monolith. It uses **Spring JDBC, not Hibernate/JPA**, and **server-side sessions, not JWT**. Describe the actual implementation accurately in your viva.
 
-The relational tables are users, rooms, allocations, invoices, complaints, leave_requests, attendance, notices and audit_log. Foreign keys protect relationships; unique constraints prevent duplicate emails, roll numbers, room labels and daily attendance.
+The relational tables are users, rooms, allocations, invoices, complaints, leave_requests, attendance, notices, audit_log, mess_menu, meal_preferences and food_feedback. Foreign keys protect relationships; unique constraints prevent duplicate emails, roll numbers, room labels and daily attendance.
 
 ## Demonstration sequence
 

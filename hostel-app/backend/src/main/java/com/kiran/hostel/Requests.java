@@ -13,5 +13,9 @@ public class Requests {
  public record Decision(@NotBlank String status,@NotNull @Size(max=1000) String response){}
  public record Notice(@NotBlank @Size(max=150) String title,@NotBlank @Size(max=2000) String body){}
  public record Attendance(@Positive long studentId,@NotNull LocalDate date,@NotBlank String status){}
+ public record Staff(@NotBlank @Size(max=100) String name,@NotBlank @Email @Size(max=160) String email,@NotBlank @Size(max=40) String rollNo,@NotBlank @Pattern(regexp="[+0-9 ()-]{7,20}") String phone,@NotBlank @Size(max=80) String department,@NotBlank @Size(min=10,max=72) String password,@NotBlank String role){}
+ public record Menu(@NotNull LocalDate date,@NotBlank @Size(max=300) String breakfast,@NotBlank @Size(max=300) String lunch,@NotBlank @Size(max=300) String dinner){}
+ public record Meals(@NotNull LocalDate date,@NotNull Boolean breakfast,@NotNull Boolean lunch,@NotNull Boolean dinner){}
+ public record FoodFeedback(@NotNull LocalDate date,@NotBlank String mealType,@Min(1) @Max(5) int rating,@NotBlank @Size(max=1000) String comments){}
  public record Password(@NotBlank String currentPassword,@NotBlank @Size(min=10,max=72) String newPassword){}
 }
