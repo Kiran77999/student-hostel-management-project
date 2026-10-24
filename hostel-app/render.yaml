@@ -1,0 +1,24 @@
+# Uses the existing hostelhub-db PostgreSQL database in My Workspace.
+services:
+- type: web
+  name: hostelhub-kiran
+  runtime: docker
+  plan: free
+  rootDir: hostel-app
+  dockerfilePath: ./Dockerfile
+  healthCheckPath: /api/health
+  envVars:
+  - key: SPRING_PROFILES_ACTIVE
+    value: production
+  - key: DB_SCHEMA_SUFFIX
+    value: -postgres
+  - key: DATABASE_URL
+    fromDatabase:
+      name: hostelhub-db
+      property: connectionString
+  - key: ADMIN_EMAIL
+    value: bodakiran656@gmail.com
+  - key: ADMIN_PASSWORD
+    sync: false
+  region: singapore
+  branch: hostelhub-java-fullstack
